@@ -1,69 +1,198 @@
-import Image from "next/image";
+import MainLayout from "@/components/layout/MainLayout";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <MainLayout>
+      <div>
+        <div style={{ marginBottom: "28px" }}>
+          <h2
+            style={{
+              margin: 0,
+              fontSize: "24px",
+              fontWeight: 700,
+              color: "var(--text-primary)",
+            }}
+          >
+            Dashboard
+          </h2>
+
+          <p
+            style={{
+              marginTop: "6px",
+              color: "var(--text-secondary)",
+              fontSize: "14px",
+            }}
+          >
+            Overview of your documents and AI activity.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+            gap: "20px",
+          }}
+        >
+          {/* Total Documents */}
+          <div
+            style={{
+              background: "var(--white)",
+              border: "1px solid var(--border)",
+              borderRadius: "var(--radius-lg)",
+              padding: "22px",
+              boxShadow: "var(--shadow-sm)",
+            }}
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <p
+              style={{
+                margin: 0,
+                color: "var(--text-secondary)",
+                fontSize: "13px",
+              }}
+            >
+              Total Documents
+            </p>
+
+            <h3
+              style={{
+                margin: "10px 0 0",
+                fontSize: "28px",
+                color: "var(--text-primary)",
+              }}
+            >
+              0
+            </h3>
+          </div>
+
+          {/* Questions Asked */}
+          <div
+            style={{
+              background: "var(--white)",
+              border: "1px solid var(--border)",
+              borderRadius: "var(--radius-lg)",
+              padding: "22px",
+              boxShadow: "var(--shadow-sm)",
+            }}
           >
-            Documentation
-          </a>
+            <p
+              style={{
+                margin: 0,
+                color: "var(--text-secondary)",
+                fontSize: "13px",
+              }}
+            >
+              Questions Asked
+            </p>
+
+            <h3
+              style={{
+                margin: "10px 0 0",
+                fontSize: "28px",
+                color: "var(--text-primary)",
+              }}
+            >
+              0
+            </h3>
+          </div>
+
+          {/* Documents Processed */}
+          <div
+            style={{
+              background: "var(--white)",
+              border: "1px solid var(--border)",
+              borderRadius: "var(--radius-lg)",
+              padding: "22px",
+              boxShadow: "var(--shadow-sm)",
+            }}
+          >
+            <p
+              style={{
+                margin: 0,
+                color: "var(--text-secondary)",
+                fontSize: "13px",
+              }}
+            >
+              Documents Processed
+            </p>
+
+            <h3
+              style={{
+                margin: "10px 0 0",
+                fontSize: "28px",
+                color: "var(--text-primary)",
+              }}
+            >
+              0
+            </h3>
+          </div>
+
+          {/* Storage Used */}
+          <div
+            style={{
+              background: "var(--white)",
+              border: "1px solid var(--border)",
+              borderRadius: "var(--radius-lg)",
+              padding: "22px",
+              boxShadow: "var(--shadow-sm)",
+            }}
+          >
+            <p
+              style={{
+                margin: 0,
+                color: "var(--text-secondary)",
+                fontSize: "13px",
+              }}
+            >
+              Storage Used
+            </p>
+
+            <h3
+              style={{
+                margin: "10px 0 0",
+                fontSize: "28px",
+                color: "var(--text-primary)",
+              }}
+            >
+              0 MB
+            </h3>
+          </div>
         </div>
-      </main>
-    </div>
+
+        {/* Welcome Section */}
+        <div
+          style={{
+            marginTop: "28px",
+            background: "var(--white)",
+            border: "1px solid var(--border)",
+            borderRadius: "var(--radius-lg)",
+            padding: "28px",
+            boxShadow: "var(--shadow-sm)",
+          }}
+        >
+          <h3
+            style={{
+              margin: 0,
+              fontSize: "18px",
+              color: "var(--text-primary)",
+            }}
+          >
+            Welcome to DocAI
+          </h3>
+
+          <p
+            style={{
+              marginTop: "8px",
+              color: "var(--text-secondary)",
+              fontSize: "14px",
+              lineHeight: 1.6,
+            }}
+          >
+            Upload your documents, ask questions, search information, compare
+            documents, and get AI-powered insights from your files.
+          </p>
+        </div>
+      </div>
+    </MainLayout>
   );
 }
